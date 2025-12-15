@@ -4,7 +4,7 @@
     <Project Path="Pooling.Application/Pooling.Application.csproj" Id="ffbfa688-0141-4d39-b490-e4f94fae126b" />
   </Folder>
   <Folder Name="/docs/">
-    <File Path="C:/Users/Administrador.DESKTOP-93CPNQB/Downloads/class-diagram.drawio" />
+    <File Path="docs/class-diagram.svg" />
   </Folder>
   <Folder Name="/Domain/">
     <Project Path="Polling.Domain/Polling.Domain.csproj" />
