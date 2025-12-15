@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "423cf164-964b-474c-b96e-3e39670e33fb",
+		"name": "Polling Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10405836"
+	},
+	"item": [
+		{
+			"name": "Questionnaires",
+			"item": [
+				{
+					"name": "Create Questionnaire",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Questionnaire criado\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"const json = pm.response.json();\r",
+									"pm.environment.set(\"questionnaireId\", json.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Pesquisa de intenção de voto\",\r\n  \"questions\": [\r\n    {\r\n      \"text\": \"Em quem você votaria para presidente?\",\r\n      \"options\": [\r\n        \"Candidato A\",\r\n        \"Candidato B\",\r\n        \"Candidato C\"\r\n      ]\r\n    },\r\n    {\r\n      \"text\": \"Você votaria novamente nessa pessoa?\",\r\n      \"options\": [\r\n        \"Sim\",\r\n        \"Não\"\r\n      ]\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questionnaires",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questionnaires"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Questionnaire (unhappy path)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Questionnaire criado\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"\",\r\n  \"questions\": [\r\n    {\r\n      \"text\": \"Em quem você votaria para presidente?\",\r\n      \"options\": [\r\n        \"Candidato A\",\r\n        \"Candidato B\",\r\n        \"Candidato C\"\r\n      ]\r\n    },\r\n    {\r\n      \"text\": \"Você votaria novamente nessa pessoa?\",\r\n      \"options\": [\r\n        \"Sim\",\r\n        \"Não\"\r\n      ]\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/questionnaires",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questionnaires"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Questionário retornado\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const json = pm.response.json();\r",
+									"pm.environment.set(\"questionId1\", json.questions[0].id);\r",
+									"pm.environment.set(\"questionId2\", json.questions[1].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/questionnaires/{{questionnaireId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"questionnaires",
+								"{{questionnaireId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Responses",
+			"item": [
+				{
+					"name": "Submit Response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Questionário respondido\", () => {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"questionnaireId\": \"{{questionnaireId}}\",\r\n  \"fingerprint\": \"usuario-123\",\r\n  \"answers\": [\r\n    {\r\n      \"questionId\": \"{{questionId1}}\",\r\n      \"value\": \"Candidato A\"\r\n    },\r\n    {\r\n      \"questionId\": \"{{questionId2}}\",\r\n      \"value\": \"Sim\"\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/responses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"responses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Response (unhappy path)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Questionário respondido\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"questionnaireId\": \"{{questionnaireId}}\",\r\n  \"fingerprint\": \"usuario-123\",\r\n  \"answers\": [\r\n    {\r\n      \"questionId\": \"{{questionId1}}\",\r\n      \"value\": \"Candidato A\"\r\n    },\r\n    {\r\n      \"questionId\": \"{{questionId2}}\",\r\n      \"value\": \"Sim\"\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/responses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"responses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Results",
+			"item": [
+				{
+					"name": "Get aggregated Results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Questionário retornado\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/results/{{questionnaireId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"results",
+								"{{questionnaireId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
