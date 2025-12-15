@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Application/">
+    <Project Path="Polling.Api/Polling.Api.csproj" Id="2d42ae42-1773-4d9a-9108-46ab8daa06df" />
+    <Project Path="Pooling.Application/Pooling.Application.csproj" Id="ffbfa688-0141-4d39-b490-e4f94fae126b" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="Polling.Domain/Polling.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Polling.Infrastructure/Polling.Infrastructure.csproj" Id="5b5fd0d5-60e0-4178-a692-2feee2fc84c9" />
+  </Folder>
+</Solution>
