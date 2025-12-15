@@ -15,6 +15,12 @@ Permitir a criação de questionários públicos e a coleta de respostas por mil
 
 ---
 
+## Diagrama de Classes
+
+![Diagrama de Classes](docs/class-diagram.png)
+
+---
+
 ## Arquitetura da Solução (.NET)
 
 A aplicação foi construída utilizando **.NET 8** e segue princípios de **Clean Architecture** e **Domain-Driven Design (DDD)**.

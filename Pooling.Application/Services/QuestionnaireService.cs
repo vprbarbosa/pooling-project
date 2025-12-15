@@ -1,7 +1,7 @@
 ﻿using Polling.Domain.Aggregates;
 using Polling.Domain.Common;
+using Polling.Domain.Entities;
 using Polling.Domain.Repositories;
-using Polling.Domain.ValueObjects;
 using Pooling.Application.Dtos;
 using Pooling.Application.Interfaces;
 
