@@ -17,7 +17,7 @@ Permitir a criação de questionários públicos e a coleta de respostas por mil
 
 ## Diagrama de Classes
 
-![Diagrama de Classes](docs/class-diagram.drawio)
+![Diagrama de Classes](docs/class-diagram.png)
 
 ---
 
