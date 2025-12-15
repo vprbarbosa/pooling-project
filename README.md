@@ -92,6 +92,12 @@ Responsável pela **persistência e integração técnica**:
 - Migrations
 - Read Models para consultas agregadas
 
+### Persistência de Dados
+
+O acesso a dados foi implementado utilizando o Entity Framework Core, responsável pelo mapeamento objeto-relacional e pela gestão do ciclo de vida das entidades do domínio.
+
+O acesso a dados foi validado por meio da execução de migrations e testes reais via API, garantindo a persistência correta das entidades e o funcionamento consistente das regras de negócio.
+
 ### Justificativa do Entity Framework Core
 
 - Integração nativa com .NET
