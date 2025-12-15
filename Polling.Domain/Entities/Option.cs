@@ -1,8 +1,7 @@
 ﻿using Polling.Domain.Common;
 using System;
-using System.Collections.Generic;
 
-namespace Polling.Domain.ValueObjects
+namespace Polling.Domain.Entities
 {
     public class Option : Entity
     {

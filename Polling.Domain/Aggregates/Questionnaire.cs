@@ -1,5 +1,5 @@
 ﻿using Polling.Domain.Common;
-using Polling.Domain.ValueObjects;
+using Polling.Domain.Entities;
 using System.Collections.Generic;
 
 namespace Polling.Domain.Aggregates

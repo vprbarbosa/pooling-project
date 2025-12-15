@@ -3,7 +3,7 @@ using Polling.Domain.Enums;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Polling.Domain.ValueObjects
+namespace Polling.Domain.Entities
 {
     public class Question : Entity
     {

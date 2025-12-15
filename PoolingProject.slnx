@@ -3,6 +3,9 @@
     <Project Path="Polling.Api/Polling.Api.csproj" Id="2d42ae42-1773-4d9a-9108-46ab8daa06df" />
     <Project Path="Pooling.Application/Pooling.Application.csproj" Id="ffbfa688-0141-4d39-b490-e4f94fae126b" />
   </Folder>
+  <Folder Name="/docs/">
+    <File Path="C:/Users/Administrador.DESKTOP-93CPNQB/Downloads/class-diagram.drawio" />
+  </Folder>
   <Folder Name="/Domain/">
     <Project Path="Polling.Domain/Polling.Domain.csproj" />
   </Folder>
