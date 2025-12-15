@@ -37,7 +37,6 @@ namespace Polling.Api.Controllers
                 var createdDto = await _service.Create(createDto);
                 var response = createdDto.ToResponse();
 
-                // 🔹 REST correto
                 return CreatedAtAction(
                     nameof(GetById),
                     new { id = response.Id },

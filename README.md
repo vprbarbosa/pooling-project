@@ -171,3 +171,13 @@ A aplicação pode ser testada através de:
 Após executar o projeto, acesse:
 
 - https://localhost:{porta}/swagger
+
+## Testes da API (Postman)
+
+O projeto possui uma coleção de testes no Postman cobrindo cenários felizes e não felizes.
+
+### Como executar os testes
+
+1. Importe os arquivos:
+   - `postman/polling-project.postman_collection.json`
+   - `postman/polling-project.postman_environment.json`

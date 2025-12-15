@@ -51,7 +51,7 @@ namespace Polling.Infrastructure.Migrations
 
             modelBuilder.Entity("Polling.Domain.Aggregates.Questionnaire", b =>
                 {
-                    b.OwnsMany("Polling.Domain.ValueObjects.Question", "Questions", b1 =>
+                    b.OwnsMany("Polling.Domain.Entities.Question", "Questions", b1 =>
                         {
                             b1.Property<Guid>("Id")
                                 .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace Polling.Infrastructure.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("QuestionnaireId");
 
-                            b1.OwnsMany("Polling.Domain.ValueObjects.Option", "Options", b2 =>
+                            b1.OwnsMany("Polling.Domain.Entities.Option", "Options", b2 =>
                                 {
                                     b2.Property<Guid>("Id")
                                         .ValueGeneratedOnAdd()

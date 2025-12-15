@@ -12,4 +12,8 @@
   <Folder Name="/Infrastructure/">
     <Project Path="Polling.Infrastructure/Polling.Infrastructure.csproj" Id="5b5fd0d5-60e0-4178-a692-2feee2fc84c9" />
   </Folder>
+  <Folder Name="/postman/">
+    <File Path="postman/polling-project.postman_collection.json" />
+    <File Path="postman/polling-project.postman_environment.json" />
+  </Folder>
 </Solution>
